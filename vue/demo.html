@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+	<!-- hello world -->
+	<div id="app">
+	  {{ message }}
+	</div>
+
+	<!-- 双向绑定 -->
+	<div id="app2">
+	  <input v-model="message">
+	  <p>{{ message }}</p>
+	</div>
+
+	<!-- 渲染列表 -->
+	<div id="app3">
+	  <ul>
+	    <li v-for="todo in todos">
+	      {{ todo.text }}
+	    </li>
+	  </ul>
+	</div>	
+
+	<!-- 处理用户输出：事件 -->
+	<div id="app4">
+	  <p>{{ message }}</p>
+	  <button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+	<br/>
+
+	<!-- 综合操作 -->
+	<div id="app5">
+		<input type="text" v-model="newItem" v-on:keyup.13="addMessage">
+		<ul>
+			<li v-for="todo in todos">
+				{{ todo.text }}
+				<button v-on:click="deleteMessage($index)">X</button>
+			</li>
+		</ul>
+	</div>
+
+
+
+
+	<script type="text/javascript" src="js/demo.js"></script>
+</body>
+</html>
